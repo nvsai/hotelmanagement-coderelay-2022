@@ -80,13 +80,13 @@ WSGI_APPLICATION = 'hostelmanagement.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-"""DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}"""
-DATABASES = {
+}
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'mydb',
@@ -95,7 +95,7 @@ DATABASES = {
         'HOST' : '127.0.0.1',
         'PORT': '5432',
     }
-}
+}"""
 
 
 # Password validation
@@ -170,5 +170,5 @@ EMAIL_HOST="smtp.gmail.com"
 EMAIL_PORT=587
 EMAIL_USE_TLS=True
 EMAIL_HOST_USER="nagavenkatasai246@gmail.com"
-EMAIL_HOST_PASSWORD="aipzskxachgeclye"
+EMAIL_HOST_PASSWORD=""
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
