@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<title>Home</title>
 <head>
   {% load static %}
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-      <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
 </head>
 <body>
    
@@ -22,6 +23,58 @@
     </div>
 </nav>
   </header>
- 
+  <br>
+  <br>
+ <center>
+   <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Raise Complaint
+</button>
+<button type="button" class="btn btn-primary" onclick="window.location.href='/viewcomplaints'">View Complaints</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Raise Complaint</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST">
+           {% csrf_token %}
+        <input class="form-control" type="text" name="noh" placeholder="Name of the Hostel" required="" >
+        <br>
+        <select class="form-control form-select" id="category" name="category" required="">
+                <option value="">Category</option>
+                <option value="cleanliness">cleanliness</option>
+                <option value="electricity">electricity</option>
+                <option value="food">Food</option>
+                <option value="water">water</option>
+                <option value="accomodation">accomodation</option>
+              </select>
+      
+        <br>
+        <input class="form-control" type="time" id="picker" name="picker">
+        <br>
+        <input class="form-control" type="number" name="rn" placeholder="Room Number" required="" >
+        <br>
+        <input class="form-control" type="number" name="pn" placeholder="Phone Number" required="" >
+        <br>
+        <textarea class="form-control" type="text" name="description" placeholder="Description" ></textarea>
+        <br>
+         <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+ </center>
 </body>
 </html>
